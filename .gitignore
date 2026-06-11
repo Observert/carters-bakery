@@ -1,0 +1,33 @@
+node_modules
+
+# Source attachments and local agent tooling
+Carters Bakery info.jpeg
+Price List attatchment 2026.pdf
+.commandcode/
+.omx/
+.superpowers/
+
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+# Playwright
+test-results
+playwright-report
