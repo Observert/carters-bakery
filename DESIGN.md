@@ -22,16 +22,16 @@ not through tourist motifs or colonial nostalgia.
 
 Use OKLCH tokens in CSS, with these roles:
 
-| Role | Token | Value | Use |
-| --- | --- | --- | --- |
-| Background | `--chalk` | `oklch(97% 0.008 145)` | Main page background |
-| Ink | `--bread-brown` | `oklch(25% 0.035 52)` | Primary text and dark surfaces |
-| Heritage | `--heritage-green` | `oklch(38% 0.095 150)` | Brand anchors and primary actions |
-| Heritage dark | `--heritage-green-dark` | `oklch(27% 0.07 150)` | Drenched sections and footer |
-| Sun | `--sun-ochre` | `oklch(83% 0.15 88)` | Hero fields, ribbons, and highlights |
-| Guava | `--guava-coral` | `oklch(68% 0.16 36)` | Stamps, active moments, and delight |
-| Leaf tint | `--leaf-wash` | `oklch(93% 0.035 145)` | Quiet section separation |
-| Rule | `--rule` | `color-mix(in oklch, var(--bread-brown) 18%, transparent)` | Borders and dividers |
+| Role          | Token                   | Value                                                      | Use                                  |
+| ------------- | ----------------------- | ---------------------------------------------------------- | ------------------------------------ |
+| Background    | `--chalk`               | `oklch(97% 0.008 145)`                                     | Main page background                 |
+| Ink           | `--bread-brown`         | `oklch(25% 0.035 52)`                                      | Primary text and dark surfaces       |
+| Heritage      | `--heritage-green`      | `oklch(38% 0.095 150)`                                     | Brand anchors and primary actions    |
+| Heritage dark | `--heritage-green-dark` | `oklch(27% 0.07 150)`                                      | Drenched sections and footer         |
+| Sun           | `--sun-ochre`           | `oklch(83% 0.15 88)`                                       | Hero fields, ribbons, and highlights |
+| Guava         | `--guava-coral`         | `oklch(68% 0.16 36)`                                       | Stamps, active moments, and delight  |
+| Leaf tint     | `--leaf-wash`           | `oklch(93% 0.035 145)`                                     | Quiet section separation             |
+| Rule          | `--rule`                | `color-mix(in oklch, var(--bread-brown) 18%, transparent)` | Borders and dividers                 |
 
 Use colour with commitment. Avoid timid neutral sections interrupted by small green accents. Do not
 use generic beige, purple-blue gradients, or resort-style tropical palettes.

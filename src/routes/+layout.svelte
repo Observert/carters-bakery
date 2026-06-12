@@ -1,19 +1,18 @@
 <script lang="ts">
 	import '../app.css';
-	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
-
+	import Footer from '$lib/components/Footer.svelte';
 	let { children } = $props();
 </script>
 
 <svelte:head>
-	<meta
-		name="description"
-		content="Carter’s Bakery, the Home of Bajan Bread in Saint George, Barbados."
-	/>
-	<meta name="theme-color" content="#147a38" />
+	<meta name="theme-color" content="#1a6b3a" />
 </svelte:head>
 
 <Header />
-<main>{@render children()}</main>
+
+<main>
+	{@render children()}
+</main>
+
 <Footer />
