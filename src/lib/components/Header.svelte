@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import { page } from '$app/state';
 
 	let menuOpen = $state(false);
 
@@ -9,6 +10,8 @@
 		{ href: '/about/', label: 'About' },
 		{ href: '/contact/', label: 'Visit & Contact' }
 	];
+
+	const isActive = (href: string) => page.url.pathname === `${base}${href}`;
 </script>
 
 <header class="site-header">
@@ -24,16 +27,23 @@
 		<button
 			class="menu-toggle"
 			type="button"
-			aria-label="Toggle navigation"
+			aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
 			aria-expanded={menuOpen}
+			aria-controls="primary-navigation"
 			onclick={() => (menuOpen = !menuOpen)}
 		>
 			<span></span><span></span><span></span>
 		</button>
 
-		<nav class:open={menuOpen} aria-label="Primary navigation">
+		<nav id="primary-navigation" class:open={menuOpen} aria-label="Primary navigation">
 			{#each links as link (link.href)}
-				<a href={`${base}${link.href}`} onclick={() => (menuOpen = false)}>{link.label}</a>
+				<a
+					href={`${base}${link.href}`}
+					aria-current={isActive(link.href) ? 'page' : undefined}
+					onclick={() => (menuOpen = false)}
+				>
+					{link.label}
+				</a>
 			{/each}
 			<a
 				class="button button-small"

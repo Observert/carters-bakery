@@ -12,17 +12,22 @@
 
 <svelte:head>
 	<title>Carter’s Bakery | The Home of Bajan Bread</title>
+	<meta
+		name="description"
+		content="Carter’s Bakery, the Home of Bajan Bread in Saint George, Barbados."
+	/>
 </svelte:head>
 
 <section class="hero">
 	<div class="container hero-grid">
 		<div class="hero-copy">
-			<h1>See what’s fresh today</h1>
-			<p>
+			<div class="location-line hero-entrance">Saint George, Barbados</div>
+			<h1 class="hero-entrance hero-entrance-delay-1">Fresh from the heart of Barbados.</h1>
+			<p class="hero-entrance hero-entrance-delay-2">
 				Browse our in-store selection of Bajan breads, pastries and bakery favourites. Planning
 				something special? We’re only a message away.
 			</p>
-			<div class="button-row">
+			<div class="button-row hero-entrance hero-entrance-delay-2">
 				<a class="button" href={`${base}/products/`}>Browse all products</a>
 				<a
 					class="button button-outline"
@@ -33,16 +38,18 @@
 					Special orders
 				</a>
 			</div>
-			<p class="hero-note">All prices are shown in Barbados dollars (BBD).</p>
+			<p class="hero-note hero-entrance hero-entrance-delay-3">
+				All prices are shown in Barbados dollars (BBD).
+			</p>
 		</div>
 		<div class="hero-image">
 			<img
+				class="image-reveal"
 				src={`${base}/images/hero.jpg`}
 				alt="A spread of fresh breads and Caribbean baked treats"
 			/>
-			<div class="hero-stamp">
-				<strong>Freshly baked</strong>
-				<span>in Saint George</span>
+			<div class="hero-stamp bakery-seal guava">
+				<span>C</span>
 			</div>
 		</div>
 	</div>
@@ -51,8 +58,8 @@
 <section class="section container">
 	<div class="section-heading split-heading">
 		<div>
-			<span class="section-label">Browse the bakery</span>
-			<h2>Made for everyday favourites</h2>
+			<span class="section-label section-label-ribbon">Browse the bakery</span>
+			<h2>What’s fresh at Carter’s</h2>
 		</div>
 		<p>
 			From traditional salt bread to sweet bakes and savoury rolls, find the products that Carter’s
@@ -66,25 +73,19 @@
 				<div>
 					<h3>{category.name}</h3>
 					<p>{category.description}</p>
-					<span>Explore products →</span>
+					<span>Explore products &rarr;</span>
 				</div>
 			</a>
 		{/each}
 	</div>
 </section>
 
-<section class="section section-soft">
-	<div class="container">
-		<div class="section-heading split-heading">
-			<div>
-				<span class="section-label">Popular picks</span>
-				<h2>In-store favourites</h2>
-			</div>
-			<a class="text-link" href={`${base}/products/`}>View the full price list →</a>
-		</div>
-		<div class="featured-grid">
+<section class="featured-strip">
+	<div class="container featured-strip-inner">
+		<h2>In-store favourites</h2>
+		<div class="featured-products-row">
 			{#each featuredProducts as product (product.name)}
-				<article class="featured-product">
+				<article class="featured-product-item">
 					<span>{categories.find((category) => category.id === product.category)?.name}</span>
 					<h3>{product.name}</h3>
 					<p>From {formatPrice(product.variants[0].price)}</p>
@@ -103,13 +104,13 @@
 		<img src={`${base}/images/about.jpg`} alt="Fresh bread being arranged in a bakery" />
 		<div>
 			<span class="section-label">The Home of Bajan Bread</span>
-			<h2>Baked for the community</h2>
+			<h2>Baked here. Loved here.</h2>
 			<p>
 				Carter’s Bakery is known for traditional Bajan salt bread, homemade sweet bread, turnovers,
 				pastries and cakes. We keep the experience simple: browse what’s available, visit the
 				bakery, or message us for special orders.
 			</p>
-			<a class="text-link" href={`${base}/about/`}>Learn about Carter’s →</a>
+			<a class="text-link" href={`${base}/about/`}>Learn about Carter’s &rarr;</a>
 		</div>
 	</div>
 </section>

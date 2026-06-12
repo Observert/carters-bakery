@@ -6,7 +6,7 @@
 
 <section class="order-panel" aria-labelledby="order-only-heading">
 	<div class="order-intro">
-		<span class="section-label">Plan ahead</span>
+		<span class="section-label section-label-framed">Plan ahead</span>
 		<h2 id="order-only-heading">Made to order</h2>
 		<p>
 			These items are prepared by advance order for the best quality and availability. Large

@@ -46,8 +46,8 @@
 	</div>
 </section>
 
-<section class="section section-soft">
-	<div class="container value-grid">
+<section class="section value-narrative">
+	<div class="container value-narrative-grid">
 		<article>
 			<span>01</span>
 			<h2>Local favourites</h2>

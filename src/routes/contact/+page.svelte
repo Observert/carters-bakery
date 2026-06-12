@@ -1,5 +1,4 @@
 <script lang="ts">
-	import VisitPanel from '$lib/components/VisitPanel.svelte';
 	import { business, inquiryLinks, stockists } from '$lib/content/business';
 </script>
 
@@ -7,55 +6,80 @@
 	<title>Visit & Contact | Carter’s Bakery</title>
 	<meta
 		name="description"
-		content="Visit Carter’s Bakery in Froster Hall, Saint George, Barbados, or contact the bakery."
+		content="Visit Carter’s Bakery in Saint George, Barbados. Get directions, hours, phone, WhatsApp and social links."
 	/>
 </svelte:head>
 
 <section class="page-hero page-hero-contact">
 	<div class="container narrow">
 		<span class="section-label">Visit & contact</span>
-		<h1>Visit Carter’s Bakery</h1>
+		<h1>Come by the bakery</h1>
 		<p>
-			Stop by for fresh breads and pastries, or message us before your visit to ask about
-			availability and special orders.
+			Visit Carter’s Bakery in Saint George, Barbados. Browse what’s fresh, ask about special
+			orders, or message us on WhatsApp.
 		</p>
 	</div>
 </section>
 
-<div class="section container"><VisitPanel /></div>
-
 <section class="section container contact-grid" id="inquire">
-	<article class="contact-card contact-primary">
-		<span class="section-label">Order inquiries</span>
-		<h2>Message us on WhatsApp</h2>
-		<p>Ask about product availability, special orders, decorated cakes or larger quantities.</p>
-		<a class="button button-light" href={inquiryLinks.whatsapp} target="_blank" rel="noreferrer">
-			Message us on WhatsApp
+	<div class="contact-card contact-primary">
+		<span class="section-label section-label-location">Location</span>
+		<h2>{business.address}</h2>
+		<p>Freshly baked in Saint George, Barbados.</p>
+		<a class="button button-light" href={business.map} target="_blank" rel="noreferrer">
+			Get directions
 		</a>
-		<span>{business.whatsappDisplay}</span>
-	</article>
-	<article class="contact-card">
-		<span class="section-label">Call the bakery</span>
-		<h2>Speak with Carter’s</h2>
-		<p>Call during opening hours for general questions and current availability.</p>
+		<span>Google Maps</span>
+	</div>
+	<div class="contact-card">
+		<h2>Phone</h2>
+		<p>Call the bakery directly to ask about products, availability or special orders.</p>
 		<a class="text-link text-link-large" href={inquiryLinks.phone}>{business.phoneDisplay}</a>
-	</article>
-	<article class="contact-card">
-		<span class="section-label">Email</span>
-		<h2>Email address coming soon</h2>
-		<p>This contact option is ready to be added when the bakery confirms its preferred email.</p>
-	</article>
+	</div>
+	<div class="contact-card">
+		<h2>WhatsApp</h2>
+		<p>Message Carter’s Bakery on WhatsApp for quick questions and advance orders.</p>
+		<a
+			class="text-link text-link-large"
+			href={inquiryLinks.whatsapp}
+			target="_blank"
+			rel="noreferrer"
+		>
+			Message us
+		</a>
+	</div>
 </section>
 
-<section class="section section-soft">
-	<div class="container stockists-section">
-		<div>
-			<span class="section-label">Stockists</span>
-			<h2>Find Carter’s products nearby</h2>
-			<p>Additional locations that carry Carter’s products will be listed here once confirmed.</p>
+<section class="section container">
+	<div class="visit-panel">
+		<div class="visit-summary">
+			<span class="section-label section-label-framed">Opening hours</span>
+			<h2>When to visit</h2>
+			<p>Visit the bakery during opening hours to browse what’s fresh.</p>
 		</div>
-		{#if stockists.length}
-			<div class="stockist-list">
+		<div class="hours-card">
+			<h3>Opening hours</h3>
+			<ul>
+				{#each business.hours as entry (entry.day)}
+					<li>
+						<span>{entry.day}</span>
+						<strong>{entry.hours}</strong>
+					</li>
+				{/each}
+			</ul>
+		</div>
+	</div>
+</section>
+
+<section class="section container">
+	{#if stockists.length}
+		<div class="stockists-section">
+			<div>
+				<span class="section-label">Stockists</span>
+				<h2>Find Carter’s near you</h2>
+				<p>Selected Carter’s products are available at these locations.</p>
+			</div>
+			<div class="stockists-list">
 				{#each stockists as stockist (stockist.name)}
 					<article>
 						<h3>{stockist.name}</h3>
@@ -63,26 +87,38 @@
 					</article>
 				{/each}
 			</div>
-		{:else}
-			<div class="empty-state compact">
-				<h3>Stockist details coming soon.</h3>
-				<p>Visit the bakery directly or follow Carter’s on social media for updates.</p>
+		</div>
+	{:else}
+		<div class="stockists-section">
+			<div>
+				<span class="section-label">Stockists</span>
+				<h2>Find Carter’s near you</h2>
+				<p>
+					Stockists will be listed here as they become available. Visit the bakery in Saint George
+					for the full range.
+				</p>
 			</div>
-		{/if}
-	</div>
+			<div class="framed-notice">
+				<p>Stockists coming soon. Visit the bakery for the full range.</p>
+			</div>
+		</div>
+	{/if}
 </section>
 
-<section class="section container social-section">
-	<div>
-		<span class="section-label">Follow the bakery</span>
-		<h2>See what’s fresh</h2>
-	</div>
-	<div class="button-row">
-		<a class="button button-outline" href={business.facebook} target="_blank" rel="noreferrer"
-			>Facebook</a
-		>
-		<a class="button button-outline" href={business.instagram} target="_blank" rel="noreferrer"
-			>Instagram</a
-		>
+<section class="section container">
+	<div class="social-section">
+		<div>
+			<span class="section-label">Follow</span>
+			<h2>Stay in touch</h2>
+			<p>
+				Follow Carter’s Bakery on Facebook and Instagram for updates, specials and new products.
+			</p>
+		</div>
+		<div class="button-row">
+			<a class="button" href={business.facebook} target="_blank" rel="noreferrer">Facebook</a>
+			<a class="button button-outline" href={business.instagram} target="_blank" rel="noreferrer"
+				>Instagram</a
+			>
+		</div>
 	</div>
 </section>

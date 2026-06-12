@@ -4,7 +4,7 @@
 
 <section class="visit-panel" aria-labelledby="visit-heading">
 	<div class="visit-summary">
-		<span class="section-label">Visit the bakery</span>
+		<span class="section-label section-label-location">Visit the bakery</span>
 		<h2 id="visit-heading">Freshly baked in Saint George</h2>
 		<p>{business.address}</p>
 		<div class="button-row">

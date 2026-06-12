@@ -34,6 +34,7 @@
 		<button
 			class:active={selectedCategory === 'all'}
 			type="button"
+			aria-pressed={selectedCategory === 'all'}
 			onclick={() => (selectedCategory = 'all')}
 		>
 			All
@@ -42,6 +43,7 @@
 			<button
 				class:active={selectedCategory === category.id}
 				type="button"
+				aria-pressed={selectedCategory === category.id}
 				onclick={() => (selectedCategory = category.id)}
 			>
 				{category.name}
