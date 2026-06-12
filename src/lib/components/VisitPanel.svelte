@@ -15,12 +15,14 @@
 	<div class="hours-card">
 		<h3>Opening hours</h3>
 		<ul>
-			{#each business.hours as entry (entry.day)}
-				<li>
-					<span>{entry.day}</span>
-					<strong>{entry.hours}</strong>
-				</li>
-			{/each}
+			<li>
+				<span>Monday – Saturday</span>
+				<strong>8:00 am – 8:00 pm</strong>
+			</li>
+			<li>
+				<span>Sunday</span>
+				<strong>Closed</strong>
+			</li>
 		</ul>
 	</div>
 </section>
